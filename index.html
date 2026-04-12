@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" dir="rtl">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lms| الصفحه الرئيسية</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+  <style>
+    :root {
+      --bg: #e9eef7;
+      --surface: #f3f6fc;
+      --surface-soft: #e3eaf8;
+      --text: #0f172a;
+      --text-soft: #2f3f56;
+      --heading: #1e3a8a;
+      --primary: #2563eb;
+      --primary-soft: #c8daf9;
+      --accent: #06b6d4;
+      --border: #bcc8d8;
+      --footer-bg: #16243a;
+      --footer-text: #e2e8f0;
+    }
+
+    html.dark {
+      --bg: #1a263bad;
+      --surface: #243249;
+      --surface-soft: #2d3d588a;
+      --text: #f3f7fc;
+      --text-soft: #dce6f3;
+      --heading: #93c4fd91;
+      --primary: #7ab4fb;
+      --primary-soft: #3a5580;
+      --accent: #22d3ee;
+      --border: #506683;
+      --footer-bg: #0f1b2e;
+      --footer-text: #f1f5f9;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    nav,
+    .features,
+    .faq,
+    .news-letter {
+      background-color: var(--surface) !important;
+    }
+
+    .features,
+    .faq {
+      background: linear-gradient(180deg,
+          color-mix(in srgb, var(--surface) 88%, var(--primary-soft) 12%),
+          color-mix(in srgb, var(--surface) 94%, var(--accent) 6%)) !important;
+      border-top: 1px solid color-mix(in srgb, var(--border) 80%, transparent 20%);
+      border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, transparent 20%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(15, 23, 42, 0.06);
+    }
+
+    html.dark .features,
+    html.dark .faq {
+      background: linear-gradient(180deg,
+          color-mix(in srgb, var(--surface) 82%, var(--primary-soft) 18%),
+          color-mix(in srgb, var(--surface) 88%, var(--accent) 12%)) !important;
+    }
+
+    nav,
+    #navbar-language ul,
+    #language-dropdown-menu {
+      border-color: var(--border) !important;
+    }
+
+    .all-courses,
+    .all-blogs,
+    section.bg-green-50,
+    section.dark\:bg-cyan-800 {
+      background-color: var(--surface-soft) !important;
+    }
+
+    .all-courses {
+      padding-top: 2rem !important;
+      padding-bottom: 5.5rem !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .all-courses .swiper {
+      margin-top: 1.75rem;
+      padding-left: 0.9rem;
+      padding-right: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .all-courses .swiper {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .hero {
+      background: linear-gradient(120deg, var(--primary-soft), var(--surface)) !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: var(--heading) !important;
+    }
+
+    p,
+    span,
+    li,
+    label,
+    input,
+    textarea {
+      color: var(--text-soft);
+    }
+
+    a {
+      color: var(--text-soft);
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--primary);
+    }
+
+    /* Keep section intro paragraphs consistent across the page */
+    .features>p,
+    section.bg-green-50>p,
+    .all-courses>p,
+    .all-blogs>p {
+      width: 90% !important;
+      max-width: 65rem;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      font-size: 1rem;
+      line-height: 2rem;
+      text-align: center;
+      color: var(--text-soft) !important;
+    }
+
+    @media (min-width: 768px) {
+      .features>p,
+      section.bg-green-50>p,
+      .all-courses>p,
+      .all-blogs>p {
+        width: 65% !important;
+      }
+    }
+
+    .hero h1,
+    .hero h2,
+    .hero p,
+    .about-right p,
+    .faq-info p,
+    .news-letter p {
+      color: var(--text-soft) !important;
+    }
+
+    .hero h1,
+    .about-right h2,
+    .features h2,
+    .all-courses h2,
+    .all-blogs h2,
+    .faq h2,
+    .news-letter h2,
+    .bg-green-50 h2 {
+      color: var(--primary) !important;
+    }
+
+    .about-right li,
+    .about-right ul li span {
+      color: var(--text) !important;
+    }
+
+    .about-right ul li {
+      background-color: color-mix(in srgb, var(--primary-soft) 65%, white 35%) !important;
+      border: 1px solid var(--border);
+    }
+
+    html.dark .about-right ul li {
+      background-color: rgba(96, 165, 250, 0.14) !important;
+    }
+
+    #navbar-language ul li a {
+      color: var(--text-soft) !important;
+    }
+
+    #navbar-language ul li a:hover {
+      color: var(--primary) !important;
+    }
+
+    #theme-toggle {
+      color: var(--text-soft) !important;
+      background-color: color-mix(in srgb, var(--surface) 82%, var(--primary-soft) 18%) !important;
+      border: 1px solid var(--border) !important;
+      transition: 0.2s ease;
+    }
+
+    #theme-toggle:hover {
+      background-color: color-mix(in srgb, var(--surface) 72%, var(--primary-soft) 28%) !important;
+      color: var(--primary) !important;
+    }
+
+    html.dark #theme-toggle {
+      background-color: color-mix(in srgb, var(--surface) 88%, #0b1220 12%) !important;
+      border-color: var(--border) !important;
+    }
+
+    .course,
+    .blog,
+    .category-course,
+    .box {
+      background-color: var(--surface) !important;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+    }
+
+    .course {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .course .course-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .course .course-info p {
+      min-height: 7.5rem;
+    }
+
+    .course .price {
+      margin-top: auto !important;
+    }
+
+    .blog {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .blog .course-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .blog .course-info p {
+      min-height: 8.5rem;
+    }
+
+    .blog .auth {
+      margin-top: auto !important;
+    }
+
+    .course h3,
+    .course p,
+    .blog h3,
+    .blog p,
+    .category-course h3,
+    .box h2,
+    .box p,
+    .price,
+    .auth {
+      color: var(--text-soft) !important;
+    }
+
+    .features .box i {
+      color: var(--primary) !important;
+    }
+
+    .features .box:nth-child(1) i {
+      color: #2563eb !important;
+    }
+
+    .features .box:nth-child(2) i {
+      color: #3b82f6 !important;
+    }
+
+    .features .box:nth-child(3) i {
+      color: #3b82f6 !important;
+    }
+
+    .features .box:nth-child(4) i {
+      color: #3b82f6 !important;
+    }
+
+    .features .box h2 {
+      color: var(--heading) !important;
+    }
+
+    .features .box p {
+      color: var(--text-soft) !important;
+    }
+
+    /* Keep original card layout; color-only customization */
+    .features .box {
+      display: block !important;
+      min-height: auto !important;
+    }
+
+    .features .box h2 {
+      display: block !important;
+      min-height: auto !important;
+      line-height: normal !important;
+      margin-bottom: 0 !important;
+    }
+
+    .features .box p {
+      min-height: auto !important;
+      line-height: normal !important;
+    }
+
+    .features .box:hover {
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--border) 45%);
+      transform: translateY(-2px);
+      transition: 0.25s ease;
+    }
+
+    #accordion-color button,
+    #accordion-color [id*="accordion-color-body"] {
+      background-color: var(--surface-soft) !important;
+      color: var(--text-soft) !important;
+      border-color: var(--border) !important;
+    }
+
+    #accordion-color [id*="accordion-color-body"] .p-5 {
+      background-color: var(--surface) !important;
+      border-color: var(--border) !important;
+    }
+
+    input {
+      background-color: var(--surface) !important;
+      border-color: var(--border) !important;
+      color: var(--text-soft) !important;
+    }
+
+    input::placeholder {
+      color: color-mix(in srgb, var(--text-soft) 70%, #94a3b8 30%) !important;
+    }
+
+    .btn,
+    a[class*="bg-green-500"],
+    div[class*="bg-green-500"] {
+      background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+      color: #fff !important;
+    }
+
+    .btn:hover,
+    a[class*="bg-green-500"]:hover {
+      filter: brightness(1.05);
+    }
+
+    /* Badge tags inside cards: cleaner in light mode */
+    html:not(.dark) .course>div.absolute,
+    html:not(.dark) .blog>div.absolute {
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
+      color: #1e40af !important;
+      border: 1px solid #93c5fd;
+      font-weight: 700;
+    }
+
+    html.dark .course>div.absolute,
+    html.dark .blog>div.absolute {
+      background: linear-gradient(135deg, #1e3a8a, #0f4c81) !important;
+      color: #dbeafe !important;
+      border: 1px solid #3b82f6;
+      font-weight: 700;
+    }
+
+    /* Available courses section highlight circles in blue */
+    .categories .category-course .pho {
+      border-color: var(--primary) !important;
+      border-width: 2px !important;
+      border-radius: 9999px;
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 24%, transparent 76%);
+    }
+
+    .categories .category-course:hover {
+      border-color: color-mix(in srgb, var(--primary) 60%, var(--border) 40%);
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.16);
+    }
+
+    .btn-prev,
+    .btn-next {
+      background: color-mix(in srgb, var(--surface) 72%, var(--primary) 28%) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border);
+    }
+
+    .f1-section h3,
+    .f2-section h3,
+    .f3-section h3,
+    .f4-section h3,
+    .f1-section p,
+    .f2-section a,
+    .f3-section a,
+    footer p {
+      color: var(--footer-text) !important;
+    }
+
+    footer {
+      background-image: none !important;
+      background-color: var(--footer-bg) !important;
+      border-top-color: var(--primary) !important;
+    }
+
+    footer a:hover {
+      color: var(--accent) !important;
+    }
+
+    footer input {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #0f172a;
+      border-color: #e2e8f0 !important;
+    }
+
+    /* Why choose us section: switch green accents to blue */
+    .about-right .fa-circle-check {
+      color: var(--primary) !important;
+    }
+
+    .about-right h2 {
+      color: var(--primary) !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- start navbat -->
+  <nav class="fixed top-0 left-0 right-0 w-full z-50 bg-white border-gray-200 dark:bg-gray-900 drop-shadow-sm ">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 logo" alt="Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">سكول تك</span>
+      </a>
+      <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+        <button type="button" data-dropdown-toggle="language-dropdown-menu"
+          class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+          <svg class="w-5 h-5 rounded-full me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900">
+            <path fill="#b22234" d="M0 0h7410v3900H0z" />
+            <path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300" />
+            <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+            <g fill="#fff">
+              <g id="d">
+                <g id="c">
+                  <g id="e">
+                    <g id="b">
+                      <path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z" />
+                      <use xlink:href="#a" y="420" />
+                      <use xlink:href="#a" y="840" />
+                      <use xlink:href="#a" y="1260" />
+                    </g>
+                    <use xlink:href="#a" y="1680" />
+                  </g>
+                  <use xlink:href="#b" x="247" y="210" />
+                </g>
+                <use xlink:href="#c" x="494" />
+              </g>
+              <use xlink:href="#d" x="988" />
+              <use xlink:href="#c" x="1976" />
+              <use xlink:href="#e" x="2470" />
+            </g>
+          </svg>
+          English (US)
+        </button>
+        <!-- Dropdown -->
+        <div
+          class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
+          id="language-dropdown-menu">
+          <ul class="py-2 font-medium" role="none">
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-us" viewBox="0 0 512 512">
+                    <g fill-rule="evenodd">
+                      <g stroke-width="1pt">
+                        <path fill="#bd3d44"
+                          d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                          transform="scale(3.9385)" />
+                        <path fill="#fff"
+                          d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
+                          transform="scale(3.9385)" />
+                      </g>
+                      <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)" />
+                      <path fill="#fff"
+                        d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z"
+                        transform="scale(3.9385)" />
+                    </g>
+                  </svg>
+                  English (US)
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-de" viewBox="0 0 512 512">
+                    <path fill="#ffce00" d="M0 341.3h512V512H0z" />
+                    <path d="M0 0h512v170.7H0z" />
+                    <path fill="#d00" d="M0 170.7h512v170.6H0z" />
+                  </svg>
+                  Deutsch
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    id="flag-icon-css-it" viewBox="0 0 512 512">
+                    <g fill-rule="evenodd" stroke-width="1pt">
+                      <path fill="#fff" d="M0 0h512v512H0z" />
+                      <path fill="#009246" d="M0 0h170.7v512H0z" />
+                      <path fill="#ce2b37" d="M341.3 0H512v512H341.3z" />
+                    </g>
+                  </svg>
+                  Italiano
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                role="menuitem">
+                <div class="inline-flex items-center">
+                  <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512">
+                    <defs>
+                      <path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z" />
+                    </defs>
+                    <path fill="#de2910" d="M0 0h512v512H0z" />
+                    <use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a" />
+                    <use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a" />
+                    <use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a" />
+                  </svg>
+
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button data-collapse-toggle="navbar-language" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-language" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-language">
+        <ul
+          class="flex md:items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="#"
+              class="block py-2 px-3 text-gray-900 bg-cyan-600 rounded-sm md:bg-transparent md:text-gray-900 md:p-0 md:dark:text-cyan-300"
+              aria-current="page">الرئيسية</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 dark:text-cyan-300 md:dark:hover:text-cyan-300 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700">الكورسات</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 dark:text-cyan-300 md:dark:hover:text-cyan-300 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700">الخدمات
+            </a>
+          </li>
+          <li>
+            <a href="#"
+              class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 dark:text-cyan-300 md:dark:hover:text-cyan-300 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700">المدونة</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-600 dark:text-cyan-300 md:dark:hover:text-cyan-300 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700">اتصل
+              بنا</a>
+          </li>
+          <li class="mr-2">
+            <button id="theme-toggle" type="button"
+              class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 focus:outline-none  dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+              <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbat -->
+
+  <!-- start hero section -->
+  <section class=" relative hero  pb-10 bg-gradient-to-r from-green-100 to-cyan-50 dark:bg-slate-900">
+    <div class="absolute w-[100%] h-[100%]  dark:bg-black/40 z-10  ">
+
+     </div>
+    <div class="max-w-screen-xl flex flex-col-reverse  md:flex-row mx-auto p-6 pt-24 relative z-20">
+      <div class=" hero-info w-full md:w-1/2 flex flex-col justify-center">
+        <h1 class="text-slate-900 text-5xl font-bold leading-16 mb-5 dark:text-slate-700 text-center md:text-right">
+          سكول تك اكبر منصة عالمية للكورسات</h1>
+        <h2 class="text-slate-900 text-3xl font-bold leading-14 mb-5 text-center md:text-right">برمجة - جرافيك - التسويق
+          الالكتروني - الذكاء الاصطناعي</h2>
+        <p class=" w-full md:w-[80%] leading-11 dark:text-slate-700 text-center md:text-right  ">يُعدّ الذكاء
+          الاصطناعي
+          (AI) قوة ثورية تعيد تشكيل مشهد التسويق بالكامل، حيث ينتقل بالاستراتيجيات من التخمين إلى التنبؤ الدقيق والعمل
+          الشخصي. تتيح أدوات الذكاء الاصطناعي للمسوقين تحليل كميات هائلة من بيانات العملاء بسرعة فائقة. ويُستخدم الذكاء
+          الاصطناعي في العديد من التطبيقات الرئيسية، مثل تخصيص المحتوى في الوقت الفعلي، وتحسين حملات الإعلانات لاستهداف
+          الجمهور الأنسب، وأتمتة المهام المتكررة مثل إدارة البريد الإلكتروني وخدمة العملاء عبر روبوتات الدردشة
+          (Chatbots). (ROI) أعلى بكثير من الطرق التقليدية.</p>
+        <div class="mt-5 flex gap-4 justify-center md:justify-start ">
+          <a class="btn" href="">تواصل معنا</a>
+          <a class="btn" href="">اشترك الان</a>
+        </div>
+      </div>
+      <div class=" hero-img w-full md:w-1/2 flex justify-center md:justify-end relative ">
+        <img src="" alt="">
+        <img class="  w-[100%] md:w-[90%]" src="assets/images/pho20.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- end hero section -->
+
+  <!-- start features section -->
+
+  <section class=" features pt-7 pb-10 dark:bg-cyan-900">
+    <h2 class="text-center text-4xl font-bold text-green-600 mb-4 dark:text-white">اهم مايميزنا</h2>
+    <p class="text-center w-[90%] md:w-[65%] mx-auto dark:text-white"> (AI) قوة ثورية تعيد تشكيل مشهد التسويق بالكامل،
+      حيث ينتقل بالاستراتيجيات من التخمين إلى التنبؤ الدقيق والعمل
+      الشخصي. تتيح أدوات الذكاء الاصطناعي للمسوقين تحليل كميات هائلة من بيانات العملاء بسرعة فائقة. ويُستخدم الذكاء
+      الاصطناعي في العديد من التطبيقات الرئيسية، مثل تخصيص المحتوى في الوقت الفعلي، وتحسين حملات الإعلانات لاستهداف
+      الجمهور الأنسب، وأتمتة المهام المتكررة مثل إدارة البريد الإلكتروني وخدمة العملاء عبر روبوتات الدردشة
+      (Chatbots). (ROI) أعلى بكثير من الطرق التقليدية.</p>
+
+    <div class=" max-w-screen-xl mx-auto boxes gap-4 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4">
+      <div
+        class="box text-center  p-6 mb-3.5 bg-green-50 dark:bg-cyan-900/30 rounded-[10px] cursor-pointer hover:translate-1 transition-all ease-in-out"
+        style="box-shadow:2px 3px 5px rgba(34,197,94,0.3) , -1px -1px 5px rgba(6,182,212,0.3);">
+        <i class="fa-solid fa-circle-question
+ text-green-600 dark:text-cyan-400 text-4xl mb-2"></i>
+        <h2 class="text-2xl  font-bold text-green-700 dark:text-white mb-2.5px">لماذا المنصة</h2>
+        <p class="text-green-700 dark:text-cyan-200">المنصة هي متخصصة في تقديم دورات تعليمية</p>
+      </div>
+
+      <div
+        class="box text-center p-6 mb-3.5 bg-green-50 dark:bg-cyan-900/30 rounded-[10px] cursor-pointer hover:translate-1 transition-all ease-in-out"
+        style="box-shadow:2px 3px 5px rgba(34,197,94,0.3) , -1px -1px 5px rgba(6,182,212,0.3);">
+        <i class="fa-solid fa-person-chalkboard text-green-600 dark:text-cyan-400 text-4xl mb-2"></i>
+        <h2 class="text-2xl  font-bold text-green-700 dark:text-white mb-2.5px">متابعة الطلاب</h2>
+        <p class="text-green-700 dark:text-cyan-200">المتابعة يوميا ووضع اختبارات شهرية</p>
+      </div>
+
+
+
+      <div
+        class="box text-center  p-6 mb-3.5 bg-green-50 dark:bg-cyan-900/30 rounded-[10px] cursor-pointer hover:translate-1 transition-all ease-in-out"
+        style="box-shadow:2px 3px 5px rgba(34,197,94,0.3) , -1px -1px 5px rgba(6,182,212,0.3);">
+        <i class="fa-solid fa-rocket text-green-600 dark:text-cyan-400 text-4xl mb-2"></i>
+        <h2 class="text-2xl  font-bold text-green-700 dark:text-white mb-2.5px">سرعة الانتاج </h2>
+        <p class="text-green-700 dark:text-cyan-200">الأتمتة هي مفتاح الإنتاجية السريعة والذكية</p>
+      </div>
+
+
+
+      <div
+        class="box text-center  p-6 mb-3.5 bg-green-50 dark:bg-cyan-900/30 rounded-[10px] cursor-pointer hover:translate-1 transition-all ease-in-out"
+        style="box-shadow:2px 3px 5px rgba(34,197,94,0.3) , -1px -1px 5px rgba(6,182,212,0.3);">
+        <i class="fa-solid fa-chart-simple text-green-600 dark:text-cyan-400 text-4xl mb-2"></i>
+        <h2 class="text-2xl  font-bold text-green-700 dark:text-white mb-2.5px">احدث اساليب التعليم</h2>
+        <p class="text-green-700 dark:text-cyan-200">يتم تطوير المنصه باحدث الاساليب سنويا</p>
+      </div>
+    </div>
+  </section>
+  <!-- end features section -->
+
+
+  <!-- start categories section -->
+
+  <section class=" bg-green-50  dark:bg-cyan-800 pt-7 pb-10">
+    <h2 class="text-center text-4xl font-bold text-green-600 mb-4 dark:text-white ">انواع الكورسات المتوفرة</h2>
+    <p class="text-center w-[90%] md:w-[65%] mx-auto dark:text-white">يسرنا أن نعلن عن الافتتاح الرسمي للتسجيل في دورتنا
+      التدريبية الجديدة والمُنتظرة. تُقدم هذه الدورة فرصة ذهبية لتعزيز مهاراتك في [سكول تك ]، حيث ستكتسب معرفة متقدمة
+      وتدريباً عملياً مباشراً. المقاعد محدودة جداً، لذا سارع بالانضمام اليوم لتأمين مكانك والبدء في رحلتك نحو التميز
+      المهني.</p>
+    <div class=" categories max-w-screen-xl mx-auto grid gap-4 grid-cols-1  lg:grid-cols-4 md:grid-cols-3 mt-10 p-3">
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">التسويق الالكتروني</h3>
+        <img class=" pho  border border-green-600" src="assets/images/pho2.jpg!w700wp" alt="">
+      </div>
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">البرمجة وتطوير الويب</h3>
+        <img class=" pho  border border-green-600" src="assets/images/pho3.webp" alt="">
+      </div>
+
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">التسويق الرقمي</h3>
+        <img class=" pho  border border-green-600" src="assets/images/pho4.jpg" alt="">
+      </div>
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">التصميم الجرافيكي</h3>
+        <img class=" pho border border-green-600" src="assets/images/pho5.jpg" alt="">
+      </div>
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">الأمن السيبراني</h3>
+        <img class="pho border border-green-600" src="assets/images/pho7.jpg" alt="">
+      </div>
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">اللغة الانجليزية</h3>
+        <img class="pho border border-green-600" src="assets/images/pho6.jpg" alt="">
+      </div>
+
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">مهارات التواصل </h3>
+        <img class=" pho border border-green-600" src="assets/images/pho8.webp" alt="">
+      </div>
+
+
+      <div
+        class="category-course flex items-center justify-between bg-gray-300 dark:bg-slate-800 p-2 rounded-md cursor-pointer hover:translate-1 tr ">
+        <h3 class="text-xl font-bold text-green-700 dark:text-cyan-200 ">تعلم الاله</h3>
+        <img class="pho border border-green-600" src="assets/images/pho9.jpg" alt="">
+      </div>
+
+
+    </div>
+  </section>
+  <!-- end categories section -->
+
+
+  <!-- start about section -->
+
+  <section class="  relative  "
+    style=" background-image: url('assets/images/pho21.avif') ; background-size: cover; background-position: center background ; ">
+
+    
+     <div class="absolute w-[100%] h-[100%]  dark:bg-black/40  z-10  ">
+
+     </div>
+      
+
+
+
+    <div class="max-w-screen-xl mx-auto grid md:grid-cols-2 p-8 relative z-20 ">
+      <div class=" about-right ">
+        <h2 class=" text-center md:text-right text-3xl mb-5 font-bold text-green-600 dark:text-cyan-500">لماذا عليك
+          اختيار اكاديمية سكول تك
+        </h2>
+        <p class="w-[90%] leading-8 mb-6 text-center md:text-right mx-auto md:mr-0 "> تعد منصة "سكول تك" بيئة تعليمية متكاملة تهدف إلى تسهيل التواصل بين الطلاب والمعلمين من خلال أدوات تقنية حديثة. توفر المنصة محتوى تعليمياً منظماً يشمل الدروس والاختبارات التفاعلية لضمان تجربة تعلم مرنة وفعالة. تسعى المنصة إلى تطوير مهارات الطلاب الرقمية وتهيئتهم لمستقبل يعتمد كلياً على التكنولوجيا والابتكار.</p>
+        <ul class="flex flex-col items-center md:items-start">
+          <li class="bg-green-100 w-[70%] rounded-[8px] p-2.5 mb-3 mt-3 ">
+             <i class="fa-solid fa-circle-check text-green-600 dark:text-cyan-500 text-2xl"></i>
+            <span class="text-xl">خبراء في التعليم لاكثر من 20 عام </span>
+          </li>
+
+          <li class="bg-green-100 w-[70%] rounded-[8px] p-2.5 mb-3 mt-3 rounded-[9px]">
+            <i class="fa-solid fa-circle-check text-green-600 dark:text-cyan-500 text-2xl"></i>
+            <span class="text-xl"> اكثر من 1000 شهادة معتمدة دوليا</span>
+          </li>
+
+          <li class="bg-green-100 w-[70%] rounded-[8px] p-2.5 mb-3 mt-3 rounded-[9px]">
+            <i class="fa-solid fa-circle-check text-green-600 dark:text-cyan-500 text-2xl"></i>
+            <span class="text-xl">مدرسين من مختلف انحاء العالم</span>
+          </li>
+
+          <li class="bg-green-100 w-[70%] rounded-[8px] p-2.5 mb-3 mt-3 rounded-[9px]">
+            <i class="fa-solid fa-circle-check text-green-600 dark:text-cyan-500 text-2xl"></i>
+            <span class="text-xl">متابعة يومية لجميع الطلاب </span>
+          </li>
+        </ul>
+        <div class="mt-5 flex gap-4 justify-center md:justify-start">
+          <a class="btn" href="">انقر هنا للمزيد</a>
+        </div>
+      </div>
+      <div class=" img-about hidden about-left md:grid grid-cols-2 gap-3 pt-19   ">
+        <img class="w-[790px] h-[300px] rounded-2xl hover:translate-1 cursor-pointer" src="assets/images/pho10.jpg"
+          alt="">
+        <img class=" w-[790px] h-[300px] rounded-2xl mt-[49px] hover:translate-1 cursor-pointer"
+          src="assets/images/pho11.png" alt="">
+      </div>
+    </div>
+
+  </section>
+  
+
+
+
+  <!-- end about section -->
+
+
+  <!-- start courses section -->
+  <section class="all-courses bg-green-50 dark:bg-cyan-800 py-[40px] relative md:flex-row">
+
+    <h2 class="text-center text-4xl font-bold text-green-600 mb-4 dark:text-white  "> لتسجيل الان</h2>
+    <p class="text-center w-[90%] md:w-[65%] mx-auto dark:text-white">يسرنا أن نعلن عن الافتتاح الرسمي للتسجيل في دورتنا
+      التدريبية الجديدة والمُنتظرة. تُقدم هذه الدورة فرصة ذهبية لتعزيز مهاراتك في [سكول تك ]، حيث ستكتسب معرفة متقدمة
+      وتدريباً عملياً مباشراً. المقاعد محدودة جداً، لذا سارع بال انضمام اليوم لتأمين مكانك والبدء في رحلتك نحو التميز
+      المهني.</p>
+
+    <!-- start courses section -->
+    <div class="swiper max-w-screen-xl mx-auto relative overflow-hidden z-10  md:mx-auto">
+      <!--
+        CUSTOM SWIPER NAVIGATION BUTTONS
+        - These custom buttons replace Swiper's default navigation
+        - Positioned absolutely with RTL-aware arrow directions
+        - fa-arrow-left for next (moves left in RTL), fa-arrow-right for prev (moves right in RTL)
+        - Connected to Swiper via .swiper-button-next and .swiper-button-prev classes
+      -->
+
+
+      <div class=" swiper-wrapper py-3 mt-8 courses ">
+        <div
+          class=" swiper-slide course relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer  ">
+          <div
+            class="  absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white dark:text-gray-200 ">
+            برمجة الويب</div>
+          <div class="course-img w-full h-[200px]">
+            <img class="w-full h-full object-cover" src="assets/images/pho7.jpg" alt="">
+          </div>
+          <div class="course-info p-2">
+            <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-white ">دبلوم برمجة الويب</h3>
+            <p class="text-center text-slate-700 dark:text-gray-200 ">
+              يُغطي هذا الدبلوم أساسيات تطوير الويب الحديثة من الواجهات الأمامية إلى ربط المشاريع الفعلية بشكل عملي.
+              ستتعلم بناء صفحات متجاوبة باستخدام HTML وCSS وJavaScript مع تطبيقات مباشرة تؤهلك لدخول سوق العمل بثقة.
+            </p>
+            <div class="price flex justify-between text-slate-700 dark:text-gray-200 mt-8 text-xl">
+              <div>
+                <span>السعر : </span>
+                <span class="line-through"> 250$</span>
+              </div>
+              <span>150$</span>
+            </div>
+            <a href="course-detalis.html"
+              class=" block text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 rounded-md text-white w-full mt-3">تفاصيل
+              الكورس</a>
+          </div>
+        </div>
+
+        <div
+          class=" swiper-slide course relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+          <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white">تعلم
+            الانجليزية </div>
+          <div class="course-img w-full h-[200px]">
+            <img class="w-full h-full object-cover" src="assets/images/pho6.jpg" alt="">
+          </div>
+          <div class="course-info p-2">
+            <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">اللغة الانجليزية</h3>
+            <p class="text-center text-slate-700 dark:text-gray-200 ">
+              تُقدم هذه الدورات عبر منصات عالمية وعربية كبرى (مثل Coursera، edX، وإدراك)، وتتراوح بين الكورسات المجانية
+              بشهادات معتمدة، والدبلومات المتخصصة التي تهدف إلى تأهيل المتعلم لدخول سوق العمل أو تطوير مساره المهني
+              الحالي.
+            </p>
+            <div class="price flex justify-between text-slate-700 dark:text-gray-200 mt-8 text-xl">
+              <div>
+                <span>السعر : </span>
+                <span class="line-through"> 250$</span>
+              </div>
+              <span>150$</span>
+            </div>
+            <a href="course-detalis.html"
+              class=" block text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 rounded-md text-white w-full mt-3">تفاصيل
+              الكورس</a>
+          </div>
+        </div>
+
+        <div
+          class=" swiper-slide course relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+          <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white ">
+            مهارات التواصل</div>
+          <div class="course-img w-full h-[200px]">
+            <img class="w-full h-full object-cover" src="assets/images/pho8.webp" alt="">
+          </div>
+          <div class="course-info p-2">
+            <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">مهارات التواصل</h3>
+            <p class="text-center text-slate-700 dark:text-gray-200 ">
+              تُقدم هذه الدورات عبر منصات عالمية وعربية كبرى (مثل Coursera، edX، وإدراك)، وتتراوح بين الكورسات المجانية
+              بشهادات معتمدة، والدبلومات المتخصصة التي تهدف إلى تأهيل المتعلم لدخول سوق العمل أو تطوير مساره المهني
+              الحالي.
+            </p>
+            <div class="price flex justify-between text-slate-700 dark:text-gray-200 mt-8 text-xl">
+              <div>
+                <span>السعر : </span>
+                <span class="line-through"> 250$</span>
+              </div>
+              <span>150$</span>
+            </div>
+            <a href="course-detalis.html"
+              class=" block text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 rounded-md text-white w-full mt-3">تفاصيل
+              الكورس</a>
+          </div>
+        </div>
+
+        <div
+          class=" swiper-slide course relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+          <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white ">
+            التصميم الجرافيكي</div>
+          <div class="course-img w-full h-[200px]">
+            <img class="w-full h-full object-cover" src="assets/images/pho5.jpg" alt="">
+          </div>
+          <div class="course-info p-2">
+            <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">التصميم الجرافيكي</h3>
+            <p class="text-center text-slate-700 dark:text-gray-200 ">
+              تُقدم هذه الدورات عبر منصات عالمية وعربية كبرى (مثل Coursera، edX، وإدراك)، وتتراوح بين الكورسات المجانية
+              بشهادات معتمدة، والدبلومات المتخصصة التي تهدف إلى تأهيل المتعلم لدخول سوق العمل أو تطوير مساره المهني
+              الحالي.
+            </p>
+            <div class="price flex justify-between text-slate-700 dark:text-gray-200 mt-8 text-xl">
+              <div>
+                <span>السعر : </span>
+                <span class="line-through"> 250$</span>
+              </div>
+              <span>150$</span>
+            </div>
+            <a href="course-detalis.html" target="blank"
+              class=" block text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 rounded-md text-white w-full mt-3">تفاصيل
+              الكورس</a>
+          </div>
+        </div>
+
+        <div
+          class=" swiper-slide course relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+          <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white ">
+            الامن
+            السيبراني</div>
+          <div class="course-img w-full h-[200px]">
+            <img class="w-full h-full object-cover" src="assets/images/pho14.jpg" alt="">
+          </div>
+          <div class="course-info p-2">
+            <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">الامن السيبراني</h3>
+            <p class="text-center text-slate-700 dark:text-gray-200 ">
+              تُقدم هذه الدورات عبر منصات عالمية وعربية كبرى (مثل Coursera، edX، وإدراك)، وتتراوح بين الكورسات المجانية
+              بشهادات معتمدة، والدبلومات المتخصصة التي تهدف إلى تأهيل المتعلم لدخول سوق العمل أو تطوير مساره المهني
+              الحالي.
+            </p>
+            <div class="price flex justify-between text-slate-700 dark:text-gray-200 mt-8 text-xl">
+              <div>
+                <span>السعر : </span>
+                <span class="line-through"> 250$</span>
+              </div>
+              <span>150$</span>
+            </div>
+            <a href="course-detalis.html" target="blank"
+              class=" block text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 rounded-md text-white w-full mt-3">تفاصيل
+              الكورس</a>
+          </div>
+        </div>
+
+        <div
+          class=" swiper-slide course relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer ">
+          <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white  ">
+            تطوير
+            برمجيات</div>
+          <div class="course-img w-full h-[200px]">
+            <img class="w-full h-full object-cover" src="assets/images/pho1.jpg" alt="">
+          </div>
+          <div class="course-info p-2">
+            <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">تطوير برمجيات</h3>
+            <p class="text-center text-slate-700 dark:text-gray-200 ">
+              تُقدم هذه الدورات عبر منصات عالمية وعربية كبرى (مثل Coursera، edX، وإدراك)، وتتراوح بين الكورسات المجانية
+              بشهادات معتمدة، والدبلومات المتخصصة التي تهدف إلى تأهيل المتعلم لدخول سوق العمل أو تطوير مساره المهني
+              الحالي.
+            </p>
+            <div class="price flex justify-between text-slate-700 dark:text-gray-200 mt-8 text-xl">
+              <div>
+                <span>السعر : </span>
+                <span class="line-through"> 250$</span>
+              </div>
+              <span>150$</span>
+            </div>
+            <a href="course-detalis.html" target="blank"
+              class=" block text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 rounded-md text-white w-full mt-3">تفاصيل
+              الكورس</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bbt absolute inset-x-0 bottom-12 z-20 flex justify-between px-2 pointer-events-none ">
+      <div
+        class="btn-prev absolute right-10 top-0 z-20 w-10 h-10 rounded-full bg-slate-800/50 hover:bg-slate-800 text-white shadow-lg cursor-pointer flex items-center justify-center pointer-events-auto">
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+      <div
+        class="btn-next absolute left-10 top-0 z-20 w-10 h-10 rounded-full bg-slate-800/50 hover:bg-slate-800 text-white shadow-lg cursor-pointer flex items-center justify-center pointer-events-auto">
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+    </div>
+
+  </section>
+  <!-- end courses section -->
+
+
+
+
+
+
+  <!-- start FAQ section -->
+  <section class="faq bg-white dark:dark:bg-cyan-900! p-1 ">
+
+    <h2 class="text-center text-4xl font-bold text-green-600 mb-4 mt-5 dark:text-white p-1 ">الأسئلة الاكثر شيوعا</h2>
+    <p class="text-center w-[90%] md:w-[65%] mx-auto dark:text-white   ">لتوفير معلومات فورية ودقيقة</p>
+
+    <div class="main-faq max-w-screen-xl mx-auto grid md:grid-cols-2 grid-cols-1 items-center p-2 md:p-3 ">
+      <div class="faq-info">
+
+        <div id="accordion-color" data-accordion="collapse p-1"
+          data-active-classes="bg-green-100 dark:bg-green-800 text-green-600 dark:text-cyan-200">
+          <h2 id="accordion-color-heading-1">
+            <button type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-1 border-gray-300 mb-1 rounded-t-xl   dark:border-gray-700 dark:text-gray-400   bg-gray-200  dark:bg-slate-700 hover:bg-blue-100! dark:hover:bg-gray-700! gap-3"
+              data-accordion-target="#accordion-color-body-1" aria-expanded="false"
+              aria-controls="accordion-color-body-1">
+              <span>ماهي الدورات التي تقدمها سكول تك</span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-1" class="hidden bg-gray-50 mb-1 border-b-1 border-gray-200 dark:border-none"
+            aria-labelledby="accordion-color-heading-1">
+            <div class="p-5 border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900 ">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                نقدم دورات تدريبية متخصصة تركز حصرياً على تزويدكم بالمهارات الأكثر طلباً في سوق العمل، مع التركيز المكثف
+                على التطبيق العملي. تشمل مساراتنا تدريب متعمق في مجالات مثل [AI] وتقنيات [Tailwind CSS]، مما يضمن خروجكم
+                بأدوات تنافسية جاهزة للانضمام للمسيرة المهنية
+              </p>
+            </div>
+          </div>
+
+          <h2 id="accordion-color-heading-2">
+            <button type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-1 border-gray-300 mb-1 rounded-t-xl   dark:border-gray-700 dark:text-gray-400   bg-gray-200  dark:bg-slate-700 hover:bg-blue-100! dark:hover:bg-gray-700! gap-3"
+              data-accordion-target="#accordion-color-body-2" aria-expanded="false"
+              aria-controls="accordion-color-body-2">
+              <span>ماهي الدورات التي تقدمها سكول تك</span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-2" class="hidden bg-gray-50 mb-1 border-b-1 border-gray-200 dark:border-none"
+            aria-labelledby="accordion-color-heading-2">
+            <div class="p-5 border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                نقدم دورات تدريبية متخصصة تركز حصرياً على تزويدكم بالمهارات الأكثر طلباً في سوق العمل، مع التركيز المكثف
+                على التطبيق العملي. تشمل مساراتنا تدريب متعمق في مجالات مثل [AI] وتقنيات [Tailwind CSS]، مما يضمن خروجكم
+                بأدوات تنافسية جاهزة للانضمام للمسيرة المهنية
+              </p>
+            </div>
+          </div>
+
+
+          <h2 id="accordion-color-heading-3">
+            <button type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-1 border-gray-300 mb-1 rounded-t-xl   dark:border-gray-700 dark:text-gray-400   bg-gray-200  dark:bg-slate-700 hover:bg-blue-100! dark:hover:bg-gray-700! gap-3"
+              data-accordion-target="#accordion-color-body-3" aria-expanded="false"
+              aria-controls="accordion-color-body-3">
+              <span>ماهي الدورات التي تقدمها سكول تك</span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-3" class="hidden bg-gray-50 mb-1 border-b-1 border-gray-200 dark:border-none"
+            aria-labelledby="accordion-color-heading-3">
+            <div class="p-5 border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                نقدم دورات تدريبية متخصصة تركز حصرياً على تزويدكم بالمهارات الأكثر طلباً في سوق العمل، مع التركيز المكثف
+                على التطبيق العملي. تشمل مساراتنا تدريب متعمق في مجالات مثل [AI] وتقنيات [Tailwind CSS]، مما يضمن خروجكم
+                بأدوات تنافسية جاهزة للانضمام للمسيرة المهنية
+              </p>
+            </div>
+          </div>
+
+          <h2 id="accordion-color-heading-4">
+            <button type="button"
+              class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-1 border-gray-300 mb-1 rounded-t-xl   dark:border-gray-700 dark:text-gray-400   bg-gray-200  dark:bg-slate-700 hover:bg-blue-100! dark:hover:bg-gray-700! gap-3"
+              data-accordion-target="#accordion-color-body-4" aria-expanded="false"
+              aria-controls="accordion-color-body-4">
+              <span>ماهي الدورات التي تقدمها سكول تك</span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-4" class="hidden bg-gray-50 mb-1 border-b-1 border-gray-200 dark:border-none"
+            aria-labelledby="accordion-color-heading-4">
+            <div class="p-5 border border-b-1 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                نقدم دورات تدريبية متخصصة تركز حصرياً على تزويدكم بالمهارات الأكثر طلباً في سوق العمل، مع التركيز المكثف
+                على التطبيق العملي. تشمل مساراتنا تدريب متعمق في مجالات مثل [AI] وتقنيات [Tailwind CSS]، مما يضمن خروجكم
+                بأدوات تنافسية جاهزة للانضمام للمسيرة المهنية
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="faq-img flex justify-center md:justify-end   ">
+        <img class="md:w-[70%]  w-100% mb-4 rounded-2xl    " src="assets/images/pho3.webp" alt="">
+      </div>
+    </div>
+
+
+  </section>
+  <!-- end FAQ section -->
+
+
+  <!-- srart blog section -->
+  <section class="all-blogs bg-green-50 dark:bg-cyan-700 py-[40px]">
+
+    <h2 class="text-center text-4xl font-bold text-green-600 mb-4 dark:text-white ">احدث الاخبار التقنية </h2>
+    <p class="text-center w-[90%] md:w-[65%] mx-auto dark:text-white">يسرنا أن نعلن عن الافتتاح الرسمي للتسجيل في دورتنا
+      التدريبية الجديدة والمُنتظرة. تُقدم هذه الدورة فرصة ذهبية لتعزيز مهاراتك في [سكول تك ]، حيث ستكتسب معرفة متقدمة
+      وتدريباً عملياً مباشراً. المقاعد محدودة جداً، لذا سارع بالانضمام اليوم لتأمين مكانك والبدء في رحلتك نحو التميز
+      المهني.</p>
+
+    <div class="p-6 md:p-0  mt-8 max-w-screen-xl mx-auto courses gap-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+      <div
+        class="blog relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+        <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white ">
+          الذكاء
+          الاصطناعي</div>
+        <div class="course-img w-full h-[200px]">
+          <img class="w-full h-full object-cover" src="assets/images/pho7.jpg" alt="">
+        </div>
+        <div class="course-info p-2">
+          <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">الذكاء الاصطناعي</h3>
+          <p class="text-center text-slate-700 dark:text-gray-200 ">تشهد الساحة التقنية حالياً تسارعاً غير مسبوق، حيث
+            أصبح الذكاء الاصطناعي التوليدي (GenAI) جزءاً لا يتجزأ من بيئة العمل، كما ارتفع الطلب على مهارات الأمن
+            السيبراني في بيئات الحوسبة السحابية. لذلك، تم تصميم مساراتنا لتواكب هذه القفزات، فجميع برامجنا تجمع بين
+            الأساسيات المتينة وتطبيق أحدث التقنيات، بما في ذلك تطوير الواجهات المتجاوبة باستخدام Tailwind CSS ، وليس
+            مجرد مُتابع.</p>
+          <div class=" auth flex justify-start gap-4 text-slate-700 dark:text-gray-200 mt-8 text-xl">
+            <img class="object-cover rounded-full" src="assets/images/pho15.png" style="height: 50px; width: 50px;"
+              alt="">
+            <div>
+              <h3> محمد احمد</h3>
+              <span class="text-[10px]">Aug.22.2025</span>
+            </div>
+
+          </div>
+          <a href="single-post.html"
+            class="text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 block rounded-md text-white w-full mt-3">اقرا
+            للمزيد</a>
+        </div>
+      </div>
+
+
+      <div
+        class="blog relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+        <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white ">الامن
+          السيبراني</div>
+        <div class="course-img w-full h-[200px]">
+          <img class="w-full h-full object-cover" src="assets/images/pho7.jpg" alt="">
+        </div>
+        <div class="course-info p-2">
+          <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">الامن السيبراني</h3>
+          <p class="text-center text-slate-700 dark:text-gray-200 ">
+            شهد دبلوم تطوير تطبيقات الويب حالياً تحولاً جذرياً لمواكبة اتجاهات عام 2025، حيث لم يعد التركيز مقتصراً على
+            الأساسيات، بل على بناء حلول متكاملة. أصبح المنهج يركز بقوة على تقنيات مثل تطبيقات الويب المتقدمة (PWA) التي
+            تدمج قوة التطبيقات وسلاسة المواقع، إلى جانب الممارسات المتقدمة في الأمن السيبراني للمواقع ومهارات التصميم
+            المتجاوب (Responsive Design) الحديثة </p>
+          <div class="auth flex justify-start gap-4 text-slate-700 dark:text-gray-200 mt-8 text-xl ">
+            <img class="object-cover rounded-full " src="assets/images/pho19.jpg" style="height: 50px; width: 50px;  "
+              alt="">
+            <div>
+              <h3>سليمان ناصر</h3>
+              <span class="text-[10px]">Aug.22.2025</span>
+            </div>
+
+          </div>
+          <a href="single-post.html"
+            class="text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 block rounded-md text-white w-full mt-3">اقرا
+            للمزيد</a>
+        </div>
+      </div>
+
+      <div
+        class="blog relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+        <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white ">تعلم
+          الاله</div>
+        <div class="course-img w-full h-[200px]">
+          <img class="w-full h-full object-cover" src="assets/images/pho7.jpg" alt="">
+        </div>
+        <div class="course-info p-2">
+          <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">تعلم الاله</h3>
+          <p class="text-center text-slate-700 dark:text-gray-200 ">
+            يستمر تعلم الآلة في كونه العمود الفقري للتحول الرقمي، حيث تظهر الإحصاءات ارتفاعاً قياسياً في الطلب على
+            مهندسي الذكاء الاصطناعي القادرين على بناء نماذج قادرة على اتخاذ القرار. لم يعد هذا المجال قاصراً على المراكز
+            البحثية، بل أصبح متطلباً أساسياً في القطاع الطبي والتمويل والأمن السيبراني. لذلك، تركز دوراتنا على تزويدكِ
+            بالمهارات الأساسية مثل التعلم العميق </p>
+          <div class="auth flex justify-start gap-4 text-slate-700 dark:text-gray-200 mt-8 text-xl">
+            <img class="object-cover rounded-full" src="assets/images/pho16.jpg" style="height: 50px; width: 50px;"
+              alt="">
+            <div>
+              <h3> خالد الحمد</h3>
+              <span class="text-[10px]">Aug.22.2025</span>
+            </div>
+
+          </div>
+          <a href="single-post.html"
+            class="text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 block rounded-md text-white w-full mt-3">اقرا
+            للمزيد</a>
+        </div>
+      </div>
+
+      <div
+        class="blog relative  bg-white dark:bg-slate-900 rounded-md overflow-hidden hover:translate-1 transition-all ease-in-out cursor-pointer">
+        <div class="absolute top-[5px] right-[5px] bg-green-500 dark:bg-cyan-500 px-2 py-1 rounded-md text-white ">الغة
+          الانجليزية</div>
+        <div class="course-img w-full h-[200px]">
+          <img class="w-full h-full object-cover" src="assets/images/pho6.jpg" alt="">
+        </div>
+        <div class="course-info p-2">
+          <h3 class="text-xl my-3 text-center font-bold text-slate-700 dark:text-gray-200">اللغة الانجليزية</h3>
+          <p class="text-center text-slate-700 dark:text-gray-200 ">
+            تُعدّ اللغة الإنجليزية اليوم العملة العالمية لعالم التقنية، فبدون إتقانها يصبح المطور أو الخبير منفصلاً عن
+            التطورات السريعة في الذكاء الاصطناعي والأمن السيبراني. تشير التحليلات إلى أن 90% من موارد التعلم ومكتبات
+            الأكواد الحديثة تُنشر بالإنجليزية أولاً، مما يجعلها أداة أساسية لمواكبة أحدث أخبار التخصصات مثل Tailwind CSS
+            و Generative AI لذلك، فإن الاستثمار في تطوير مهارات اللغة مهم </p>
+          <div class="auth flex justify-start gap-4 text-slate-700 dark:text-gray-200 mt-8 text-xl">
+            <img class="object-cover rounded-full" src="assets/images/pho18.png" style="height: 50px; width: 50px;"
+              alt="">
+            <div>
+              <h3>سالم الهادي</h3>
+              <span class="text-[10px]">Aug.22.2025</span>
+            </div>
+
+          </div>
+          <a href="single-post.html"
+            class="text-center bg-green-500 dark:bg-cyan-500 px-5 py-3 block rounded-md text-white w-full mt-3">اقرا
+            للمزيد</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- srart blog section -->
+
+  <!-- start Newletter section  -->
+  <section class="news-letter py-[20px] bg-white dark:bg-[#1a273bad]!">
+    <div class=" max-w-screen-xl mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 p-2 md:p-0">
+      <div>
+        <h2 class=" text-center md:text-right text-4xl font-bold text-green-600 dark:text-cyan-200 mb-5  ">النشرة
+          البريدية
+        </h2>
+        <p class=" text-center md:text-right w-[90%] dark:text-gray-200">
+          تشير التقارير إلى تحول الشركات من استخدام أدوات الذكاء الاصطناعي كـ "مساعد" إلى استخدامها كـ "وكلاء مستقلين"
+          (Autonomous Agents) قادرين على تنفيذ سلاسل مهام معقدة، مثل إعداد بيئات التطوير الأولية أو إدارة العمليات
+          الروتينية. هذا يتطلب من المطورين إتقان هندسة الأوامر الموجهة (Prompt Engineering) أكثر من أي وقت مضى.
+        </p>
+      </div>
+
+      <div class="news-form flex items-center">
+        <form action="" class="flex w-full gap-2">
+          <input class="grow border border-gray-200 px-3 rounded-[6px] dark:placeholder:text-gray-200" type="text"
+            placeholder=" ادخل البريد الالكتروني للاشتراك">
+          <button class="btn"> اشترك الان</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <!-- end  Newletter section  -->
+
+  <!-- start footer section  -->
+  <footer class=" foot border-t-4 "
+    style="background-image: url(./assets/images/pho30.jpg);  background-repeat: repeat; background-size:cover;     ">
+
+
+
+
+    <div class=" relative max-w-screen-xl mx-auto p-3 pt-[34px] 
+               grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 
+               gap-8 text-center items-start ">
+      <div class="f1-section">
+        <h3 class="text-2xl font-bold text-gray-900 "> سكول تك</h3>
+        <p class="text-gray-900 leading-9 w-[80%] mr-9">تلتزم [سكول تك] بتخريج جيل من المطورين والقادة التقنيين القادرين
+          على المنافسة في اقتصاد المعرفة العالمي. في عصرنا الحالي </p>
+
+      </div>
+
+      <div class="f2-section">
+        <h3 class="text-2xl font-bold text-gray-900 mb-5  "> اهم الروابط</h3>
+        <ul class="flex flex-col gap-2">
+          <li><a class="text-gray-900" href=""> الرئيسية</a></li>
+          <li><a class="text-gray-900" href="">اتصل بنا</a></li>
+          <li><a class="text-gray-900" href="">الكورسات</a></li>
+          <li><a class="text-gray-900" href="">المدونة</a></li>
+          <li><a class="text-gray-900" href="">حول الشركة</a></li>
+        </ul>
+      </div>
+
+      <div class="f3-section">
+        <h3 class="text-2xl font-bld text-gray-900 mb-5  "> اهم الكورسات</h3>
+        <ul class="flex flex-col gp-2">
+          <li><a class="text-gray-900" href=""> تطوير الويب</a></li>
+          <li><a class="text-gray-900" href="">الانجليزية</a></li>
+          <li><a class="text-gray-900" href="">تعلم الاله</a></li>
+          <li><a class="text-gray-900" href="">الامن السيبراني</a></li>
+          <li><a class="text-gray-900" href="">التصميم الجرافيكي</a></li>
+        </ul>
+      </div>
+
+      <div class="f4-section">
+        <h3 class="text-2xl font-bold text-gray-900 mb-5  ">النشرة البريدية</h3>
+        <form action="" class=" flex flex-col gap-3">
+          <input type="text" placeholder="البريد الالكتروني" 
+            class=" pr-2 h-10 border x-[20px] text-white py-[4px] rounded-[5px] placeholder:text-white! dark:placeholder:text-white! focus:outline-none dark:bg-[#2f3f56]!  bg-[#2f3f56]! border-amber-50!">
+          <button class="btn"> اشترك الان</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div
+      class=" relative z-20 max-w-screen-xl mx-auto flex flex-col md:flex-row gap-3 items-center justify-between border-t-[1px] border-gray-600 py-[25px]">
+      <p class="text-gray-900">سكول تك 2025</p>
+      <p class="text-gray-900"> جميع الحقوق محفوظة </p>
+    </div>
+
+  </footer>
+  <!-- end  footer section  -->
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+
+
+</html>

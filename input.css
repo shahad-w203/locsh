@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body{
+    font-family: cairo;
+}
+
+h1,h2 , h3 {
+    font-family:Almarai;
+}
+
+
+
+.btn{
+    background-color: #16a34a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.dark .btn{
+    background-color: #06b6d4;
+}
+
+.btn:hover{
+    filter:brightness(90%) 
+}
+img-translate{
+animation: translate-img 1s ease-in-out infinite ;
+
+}
+
+.lms{
+  background-color: rgb(55, 55, 230);
+  color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+  
+}
+
+@keyframes translate-img {
+    0%,
+    100% {
+      transform: translatex(-10px);
+    }
+    50% {
+      transform: translatex(10px);
+    }
+  }
+
+  .pho{
+    border-radius: 180px;
+    height: 80px;
+    width: 80px;
+  }
+  
+
+  /* إخفاء السكرول لمتصفحات Chrome و Safari و Edge */
+body::-webkit-scrollbar {
+    display: none ; 
+}
+
+/* إخفاء السكرول لمتصفح Firefox */
+body {
+    -ms-overflow-style: none;  /* لمتصفح Internet Explorer و Edge القديم */
+    scrollbar-width: none;     /* لمتصفح Firefox */
+}
+.all-courses {
+    overflow-x: hidden; /* يمنع التمرير الأفقي الزائد */
+}
+
+logo
+
+   {
+    /* هاد السطر بيحول الأزرق لأخضر فستقي بالظبط */
+    filter: hue-rotate(650deg) saturate(1) brightness(1);
+}
+.phoo{
+    width: 1500px;
+}
+
+@import "tailwindcss";
+
+@theme {
+  /* هنا ننشئ "اختصار" للألوان */
+  --color-main: var(--brand);
+  --color-surface: var(--bg);
+}
+
+/* الألوان الأساسية للموقع */
+:root {
+  --brand: #8292d8; /* لون النهار الأساسي */
+  --bg: #a02121;    /* خلفية النهار */
+}
+
+/* هنا السحر.. التعليمات التي تغير الموقع كاملاً في الوضع الليلي */
+.dark {
+  --brand: #22d3ee !important; /* لون الليل الأساسي */
+  --bg: #0f172a !important;    /* خلفية الليل */
+}
+.dark .foot{
+background-color: cyan- important! ;
+}
